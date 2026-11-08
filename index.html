@@ -124,6 +124,23 @@ body.exploring .overlay{opacity:0}
 .ch-bar i{display:block;height:100%;width:calc(var(--k,0)*100%);background:linear-gradient(90deg,var(--brand),var(--accent))}
 @media (max-width:760px){.chapter{bottom:96px;padding:20px}.ch-num{font-size:2.2rem}.chapter p{font-size:.92rem}}
 
+.choose{position:absolute;top:96px;right:calc(max(16px,(100vw - 1200px)/2) + 44px);width:350px;padding:18px;border-radius:22px;background:rgba(5,22,25,.78);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);border:1px solid rgba(63,224,208,.45);box-shadow:0 0 50px -12px rgba(63,224,208,.6);opacity:0;transform:translateX(30px) scale(.96);transition:opacity .5s,transform .5s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.choose.on{opacity:1;transform:none;pointer-events:auto}
+.cq{display:flex;align-items:center;gap:8px;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);font-weight:700}
+.cq-h{display:block;font-family:var(--display);font-weight:500;font-size:1.35rem;line-height:1.25;margin:8px 0 14px}
+:lang(gu) .cq-h{font-family:"Noto Sans Gujarati",var(--font);font-weight:700;font-size:1.15rem}
+.doc-opt{display:flex;align-items:center;gap:12px;width:100%;padding:10px 12px;margin-bottom:8px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.04);cursor:pointer;text-align:left;transition:.25s}
+.doc-opt:hover{border-color:var(--brand);background:rgba(63,224,208,.08)}
+.doc-opt img{width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:50% 25%;border:2px solid rgba(255,255,255,.15)}
+.doc-opt span{flex:1;display:flex;flex-direction:column;line-height:1.3}
+.doc-opt b{font-size:.98rem}
+.doc-opt small{font-size:.72rem;color:var(--ink-3)}
+.doc-opt i{font-style:normal;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;font-weight:800;border:1px solid var(--line);color:transparent;transition:.25s}
+.doc-opt.sel{border-color:var(--brand);background:rgba(63,224,208,.12);box-shadow:0 0 22px -8px var(--brand)}
+.doc-opt.sel img{border-color:var(--brand)}
+.doc-opt.sel i{background:var(--brand);border-color:var(--brand);color:#032321}
+.ch-note{font-size:.8rem;color:var(--ink-2);margin-top:4px;min-height:1.2em}
+@media (max-width:760px){.choose{top:auto;bottom:96px;left:16px;right:16px;width:auto;padding:14px}.cq-h{font-size:1.1rem;margin:6px 0 10px}.stage.ch-on .chapter{opacity:0!important}}
 .dx{position:absolute;top:96px;right:calc(max(16px,(100vw - 1200px)/2) + 44px);width:350px;padding:18px;border-radius:22px;background:rgba(5,22,25,.74);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);border:1px solid rgba(63,224,208,.45);box-shadow:0 0 50px -12px rgba(63,224,208,.6);opacity:0;transform:translateX(30px) scale(.96);transition:opacity .5s,transform .5s cubic-bezier(.2,.8,.2,1);font-size:.85rem}
 .dx.on{opacity:1;transform:none}
 .dx-head{display:flex;align-items:center;gap:8px;font-size:.7rem;letter-spacing:.16em;color:var(--brand)}
@@ -210,6 +227,19 @@ body.exploring .explore-hint{display:block}
 @media (max-width:1000px){.dept-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.dept-grid{grid-template-columns:1fr}}
 
+.docs{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.dcard{display:grid;grid-template-columns:210px 1fr;gap:24px;padding:18px;align-items:center}
+.dcard:hover{transform:translateY(-4px)}
+.dcard .ph{aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:#0c2a2e}
+.dcard img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.dcard:hover img{transform:scale(1.05)}
+.dcard .kh{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.dcard h3{font-size:clamp(1.6rem,2.6vw,2.1rem);margin:6px 0 8px}
+.dcard .q{color:var(--brand);font-weight:600;font-size:.9rem;margin-bottom:10px}
+.dcard p{color:var(--ink-2);font-size:.93rem}
+.motto-q{margin:36px auto 0;max-width:760px;text-align:center;font-family:var(--display);font-style:italic;font-size:1.35rem;line-height:1.5}
+@media (max-width:980px){.docs{grid-template-columns:1fr}}
+@media (max-width:520px){.dcard{grid-template-columns:1fr}.dcard .ph{max-width:300px}}
 .fac-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .fac{padding:28px 26px}
 .fac:hover{transform:translateY(-6px)}
@@ -345,7 +375,7 @@ body.exploring .dock{transform:translate(-50%,150%)}
         <li><a href="#top" data-i18n="nav_tour">3D Tour</a></li>
         <li><a href="#facilities" data-i18n="nav_fac">Facilities</a></li>
         <li><a href="#gallery" data-i18n="nav_gal">Gallery</a></li>
-        <li><a href="#doctor" data-i18n="nav_doc">Our Doctor</a></li>
+        <li><a href="#doctor" data-i18n="nav_doc">Our Doctors</a></li>
         <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
       </ul>
       <div class="nav-actions">
@@ -363,6 +393,7 @@ body.exploring .dock{transform:translate(-50%,150%)}
   <div class="stage" id="stage">
     <canvas id="scene" aria-label="Interactive 3D model of Keya Hospitals"></canvas>
     <div class="tag3d" id="docTag" aria-hidden="true"><div class="tin"><span><b>Dr. Yoganand Shukla</b><small>Keya Hospitals</small></span><i></i></div></div>
+    <div class="tag3d" id="docTag2" aria-hidden="true"><div class="tin"><span><b>Dr. Vrushank Bhatt</b><small>Keya Hospitals</small></span><i></i></div></div>
     <div class="vignette"></div>
 
     <div class="overlay">
@@ -411,9 +442,16 @@ body.exploring .dock{transform:translate(-50%,150%)}
         <div class="ch-bar"><i></i></div>
       </article>
 
+      <div class="choose" id="choose">
+        <div class="cq"><span class="dx-dot"></span><small data-i18n="cq_k">Reception · Keya Hospitals</small></div>
+        <b class="cq-h" data-i18n="cq_h">Whom would you like to consult today?</b>
+        <button class="doc-opt" data-doc="y"><img src="doctor.jpg" alt=""><span><b class="dn" data-k="y">Dr. Yoganand Shukla</b><small>Keya Hospitals</small></span><i>✓</i></button>
+        <button class="doc-opt" data-doc="v"><img src="vrushank.jpg" alt=""><span><b class="dn" data-k="v">Dr. Vrushank Bhatt</b><small>Keya Hospitals</small></span><i>✓</i></button>
+        <p class="ch-note" id="chNote"></p>
+      </div>
       <div class="dx" id="dx" aria-live="polite">
         <div class="dx-head"><span class="dx-dot"></span><b>KEYA SMART DIAGNOSTICS</b><span class="dx-live">LIVE</span></div>
-        <div class="dx-pt"><span data-i18n="dx_pt">Patient · ICU Bed 1</span><span data-i18n="dx_dr">Dr. Yoganand Shukla</span></div>
+        <div class="dx-pt"><span data-i18n="dx_pt">Patient · ICU Bed 1</span><span id="dxDr">Dr. Yoganand Shukla</span></div>
         <div class="dx-vitals"><div><small>HR</small><b id="dxHr">72</b><i>bpm</i></div><div><small>SpO₂</small><b>98</b><i>%</i></div><div><small>BP</small><b>120/80</b></div><div><small>TEMP</small><b>98.6</b><i>°F</i></div></div>
         <canvas id="dxEcg" width="600" height="110"></canvas>
         <ol class="dx-steps">
@@ -478,24 +516,13 @@ body.exploring .dock{transform:translate(-50%,150%)}
   </section>
 
   <section class="section" id="doctor" style="padding-top:40px">
-    <div class="wrap doc">
-      <div class="doc-photo reveal" id="docPhoto">
-        <span class="initials" id="docInitials">Dr</span>
-        <div class="doc-tag"><b data-cfg="doctorName"></b><span data-cfg="doctorTitle"></span></div>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="doc_eb">Meet our doctors</span>
+        <h2><span data-i18n="docs_h1">The doctors</span> <em class="grad" data-i18n="docs_h2">behind the care.</em></h2>
       </div>
-      <div class="reveal">
-        <span class="eyebrow" data-i18n="doc_eb">Meet our doctor</span>
-        <h2 data-cfg="doctorName"></h2>
-        <p class="role" data-cfg="doctorQual"></p>
-        <p style="color:var(--ink-2)" data-cfg="doctorBio"></p>
-        <blockquote><span class="motto-dev">सर्वजन सुखिनः भवन्तु</span><br><span data-i18n="motto_en">"May everyone be happy and healthy." The motto of Keya Hospitals.</span></blockquote>
-        <div class="points">
-          <div class="card"><b data-i18n="dp1">Accurate diagnosis</b><span data-i18n="dp1s">Gets to the root cause</span></div>
-          <div class="card"><b data-i18n="dp2">Patient-first</b><span data-i18n="dp2s">Explains every step clearly</span></div>
-          <div class="card"><b data-i18n="dp3">Evidence-based</b><span data-i18n="dp3s">Modern, proven treatment</span></div>
-          <div class="card"><b data-i18n="dp4">Always caring</b><span data-i18n="dp4s">Care beyond the clinic</span></div>
-        </div>
-      </div>
+      <div class="docs" id="docsGrid"></div>
+      <blockquote class="motto-q reveal"><span class="motto-dev">सर्वजन सुखिनः भवन्तु</span><br><span data-i18n="motto_en">"May everyone be happy and healthy." The motto of Keya Hospitals.</span></blockquote>
     </div>
   </section>
 
@@ -594,11 +621,17 @@ body.exploring .dock{transform:translate(-50%,150%)}
    Source: the hospital's own Facebook page + its Google Maps listing.
    ===================================================================== */
 const CONFIG = {
-  doctorName:  "Dr. Yoganand Shukla",
-  doctorTitle: "Keya Hospitals, Nadiad",
-  doctorQual:  "Past President, Nadiad Medical Association (IMA Nadiad Branch), 2019–20",
-  doctorPhoto: "doctor.jpg",
-  doctorBio:   "The familiar, reassuring face of Keya Hospitals. Patients know him for his patience, for taking the time to listen, and for treating the person, not just the illness.",
+  doctors: [
+    { key:"y", name:"Dr. Yoganand Shukla", gu:"ડૉ. યોગાનંદ શુક્લ", photo:"doctor.jpg",
+      qual:"Past President, Nadiad Medical Association (IMA Nadiad Branch), 2019–20",
+      qualGu:"નડિયાદ મેડિકલ એસોસિએશન (IMA નડિયાદ શાખા)ના પૂર્વ પ્રમુખ, 2019–20",
+      bio:"The familiar, reassuring face of Keya Hospitals. Patients know him for his patience, for taking the time to listen, and for treating the person, not just the illness.",
+      bioGu:"કેયા હોસ્પિટલ્સનો પરિચિત અને વિશ્વાસપાત્ર ચહેરો. દર્દીઓ તેમને ધીરજ, ધ્યાનથી સાંભળવા અને માત્ર બીમારી નહીં પણ વ્યક્તિની સારવાર માટે ઓળખે છે." },
+    { key:"v", name:"Dr. Vrushank Bhatt", gu:"ડૉ. વૃષાંક ભટ્ટ", photo:"vrushank.jpg",
+      qual:"", qualGu:"",          // add his degrees / speciality here
+      bio:"A calm, steady presence at Keya Hospitals. Patients appreciate how clearly he explains every step and how quickly he puts them at ease.",
+      bioGu:"કેયા હોસ્પિટલ્સમાં શાંત અને ભરોસાપાત્ર હાજરી. દર્દીઓ તેમની દરેક પગલાની સ્પષ્ટ સમજૂતી અને આત્મીયતાની કદર કરે છે." }
+  ],
   thankYou:    "Thank you for listening when I needed it most, for getting the diagnosis right, and for treating me with so much care. This website is my small way of saying thank you.",
   patientName: "A grateful patient",
   madeBy:      "by a grateful patient",
@@ -645,7 +678,7 @@ const GALLERY=[
 ];
 const REASONS=[["General consultation","સામાન્ય કન્સલ્ટેશન"],["Follow-up visit","ફોલો-અપ મુલાકાત"],["Child / newborn care","બાળક / નવજાત સંભાળ"],["Other","અન્ય"]];
 const GU={
-  tagline:"હોસ્પિટલ્સ",nav_tour:"3D ટૂર",nav_fac:"સુવિધાઓ",nav_gal:"ગેલેરી",nav_doc:"અમારા ડૉક્ટર",nav_contact:"સંપર્ક",cta_book:"એપોઇન્ટમેન્ટ બુક કરો",
+  tagline:"હોસ્પિટલ્સ",nav_tour:"3D ટૂર",nav_fac:"સુવિધાઓ",nav_gal:"ગેલેરી",nav_doc:"અમારા ડૉક્ટરો",nav_contact:"સંપર્ક",cta_book:"એપોઇન્ટમેન્ટ બુક કરો",
   intro_eb:"કેયા હોસ્પિટલ્સ · નડિયાદ",intro_h1:"જ્યાં સંભાળ",intro_h2:"જીવંત બને છે.",intro_p:"દર્દીની સફરની 3D ઝલક લો, મદદ પહોંચે ત્યારથી લઈને સ્વસ્થ થઈ ઘરે જાય ત્યાં સુધી.",scroll:"સફર શરૂ કરવા સ્ક્રોલ કરો",rating:"ગૂગલ રેટિંગ",
   ch1_k:"આગમન",ch1_h:"દરેક સેકન્ડ કિંમતી છે.",ch1_p:"જ્યારે તમારા પ્રિયજનને મદદની જરૂર હોય, ત્યારે દરેક મિનિટ મહત્વની છે. કેયા હોસ્પિટલ્સ અહીં જ નડિયાદમાં, પીજ રોડ પર છે.",
   ch2_k:"સંભાળપૂર્વક સ્વાગત",ch2_h:"દરવાજે જ તૈયાર હાથ.",ch2_p:"નર્સો અને સ્ટાફ પ્રવેશદ્વાર પર જ દર્દીને મળી સીધા અંદર લઈ જાય છે, જ્યારે ડૉક્ટર તપાસ માટે તૈયાર હોય છે.",
@@ -656,7 +689,7 @@ const GU={
   day:"દિવસ",dusk:"સાંજ",night:"રાત",explore:"3D માં ફરો",exit:"3D વ્યૂ બંધ કરો",hint:"ફેરવવા ખેંચો · ઝૂમ માટે સ્ક્રોલ કરો",
   fac_eb:"સુવિધાઓ",fac_h1:"આખા પરિવાર માટે સંભાળ,",fac_h2:"ઘરની નજીક.",fac_p:"ICU થી લઈને નવજાત શિશુ સંભાળ સુધી, કેયા હોસ્પિટલ્સ તમારા પરિવારની જરૂરી સંભાળ અહીં નડિયાદમાં જ આપે છે.",
   gal_eb:"કેયાની અંદર",gal_h1:"સાચા રૂમ.",gal_h2:"સાચી સંભાળ.",gal_p:"જે હોસ્પિટલમાં તમે હમણાં 3D માં ફર્યા, તે વાસ્તવમાં આવી છે.",
-  doc_eb:"અમારા ડૉક્ટરને મળો",motto_en:"\"સૌ સુખી અને સ્વસ્થ રહે.\" કેયા હોસ્પિટલ્સનો મંત્ર.",
+  doc_eb:"અમારા ડૉક્ટરોને મળો",docs_h1:"સંભાળ પાછળના",docs_h2:"ડૉક્ટરો.",cq_k:"રિસેપ્શન · કેયા હોસ્પિટલ્સ",cq_h:"આજે તમે કયા ડૉક્ટરને મળવા માંગો છો?",motto_en:"\"સૌ સુખી અને સ્વસ્થ રહે.\" કેયા હોસ્પિટલ્સનો મંત્ર.",
   dp1:"સચોટ નિદાન",dp1s:"મૂળ કારણ સુધી પહોંચે",dp2:"દર્દી પ્રથમ",dp2s:"દરેક પગલું સ્પષ્ટ સમજાવે",dp3:"પુરાવા આધારિત",dp3s:"આધુનિક, સાબિત સારવાર",dp4:"હંમેશા સંભાળ",dp4s:"ક્લિનિક પછી પણ સંભાળ",
   say_thanks:"પ્રેમ મોકલો",book_eb:"સેકન્ડમાં બુકિંગ",book_h1:"તમારી એપોઇન્ટમેન્ટ,",book_h2:"એક ટૅપ દૂર.",book_p:"વિગતો ભરો અને તમારી વિનંતી સીધી WhatsApp માં ખુલશે.",
   bf_h:"એપોઇન્ટમેન્ટની વિનંતી",bf_p:"અમે WhatsApp અથવા ફોન દ્વારા સમય કન્ફર્મ કરીશું.",bf_name:"પૂરું નામ",bf_age:"ઉંમર",bf_dept:"મુલાકાતનું કારણ",bf_date:"પસંદગીની તારીખ",bf_slot:"પસંદગીનો સમય",bf_note:"તકલીફ (વૈકલ્પિક)",bf_send:"WhatsApp દ્વારા બુક કરો",
@@ -675,9 +708,6 @@ const fmtH=h=>(h%12||12)+(h>=12?" PM":" AM");
 
 function applyConfig(){
   $$("[data-cfg]").forEach(el=>{const v=CONFIG[el.dataset.cfg]; if(v) el.textContent=v});
-  const ini=CONFIG.doctorName.replace(/^Dr\.?\s*/i,"").split(/\s+/).map(w=>w[0]||"").join("").slice(0,2).toUpperCase();
-  $("#docInitials").textContent=ini||"Dr";
-  if(CONFIG.doctorPhoto){const img=new Image();img.alt=CONFIG.doctorName;img.onload=()=>{$("#docPhoto").prepend(img);$("#docInitials").remove()};img.src=CONFIG.doctorPhoto}
   const tel="tel:+"+CONFIG.phone; $("#phoneLink").href=tel; $("#dockCall").href=tel;
   $("#mailLink").href="mailto:"+CONFIG.email; $("#pharmLink").href="tel:+"+CONFIG.pharmacy;
   $("#dockWa").href="https://wa.me/"+CONFIG.phone+"?text="+encodeURIComponent("Hello Keya Hospitals, I would like to enquire about an appointment.");
@@ -689,6 +719,7 @@ function applyConfig(){
 function svgI(n){return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICONS[n]}</svg>`}
 function spot(el){if(el.dataset.spot)return;el.dataset.spot=1;el.addEventListener("pointermove",e=>{const r=el.getBoundingClientRect();el.style.setProperty("--x",(e.clientX-r.left)+"px");el.style.setProperty("--y",(e.clientY-r.top)+"px")})}
 function renderContent(){
+  $("#docsGrid").innerHTML=CONFIG.doctors.map(d=>`<article class="card dcard reveal in"><div class="ph"><img src="${d.photo}" alt="${d.name}" loading="lazy"></div><div><small class="kh">${lang==="gu"?"કેયા હોસ્પિટલ્સ, નડિયાદ":"Keya Hospitals, Nadiad"}</small><h3>${lang==="gu"?d.gu:d.name}</h3>${d.qual?`<p class="q">${lang==="gu"&&d.qualGu?d.qualGu:d.qual}</p>`:""}<p>${lang==="gu"?d.bioGu:d.bio}</p></div></article>`).join("");
   $("#facGrid").innerHTML=FAC.map(f=>`<article class="card fac reveal in"><div class="ic">${svgI(f.icon)}</div><h3>${L(f)[0]}</h3><p>${L(f)[1]}</p></article>`).join("");
   $("#galleryGrid").innerHTML=GALLERY.map(g=>`<figure><img src="${g.src}" alt="${L(g)[0]}" loading="lazy"><figcaption>${L(g)[0]}<small>${L(g)[1]}</small></figcaption></figure>`).join("");
   $$(".card").forEach(spot);
@@ -925,7 +956,7 @@ const PG={leg:new THREE.CapsuleGeometry(.085,.72,4,8),shoe:new THREE.BoxGeometry
   tail:new THREE.CylinderGeometry(.25,.31,.6,14),skirt:new THREE.CylinderGeometry(.2,.32,.88,14),arm:new THREE.CapsuleGeometry(.065,.42,4,8),
   hand:new THREE.SphereGeometry(.07,8,6),neck:new THREE.CylinderGeometry(.07,.07,.12,8),head:new THREE.SphereGeometry(.15,20,16),
   hair:new THREE.SphereGeometry(.158,20,12,0,Math.PI*2,0,Math.PI*.56),bun:new THREE.SphereGeometry(.085,10,8),
-  steth:new THREE.TorusGeometry(.15,.014,6,24),dupatta:new THREE.BoxGeometry(.11,.66,.04),eye:new THREE.SphereGeometry(.019,8,6),brow:new THREE.BoxGeometry(.06,.012,.01),lens:new THREE.TorusGeometry(.042,.008,6,18),bridge:new THREE.BoxGeometry(.04,.01,.01),rim:new THREE.BoxGeometry(.088,.016,.012),rimS:new THREE.BoxGeometry(.013,.056,.012),temple:new THREE.BoxGeometry(.012,.012,.11),fringe:new THREE.BoxGeometry(.2,.035,.11),smile:new THREE.TorusGeometry(.038,.008,4,12,Math.PI)};
+  steth:new THREE.TorusGeometry(.15,.014,6,24),dupatta:new THREE.BoxGeometry(.11,.66,.04),eye:new THREE.SphereGeometry(.019,8,6),brow:new THREE.BoxGeometry(.06,.012,.01),lens:new THREE.TorusGeometry(.042,.008,6,18),bridge:new THREE.BoxGeometry(.04,.01,.01),rim:new THREE.BoxGeometry(.088,.016,.012),rimS:new THREE.BoxGeometry(.013,.056,.012),temple:new THREE.BoxGeometry(.012,.012,.11),fringe:new THREE.BoxGeometry(.2,.035,.11),hairBand:new THREE.SphereGeometry(.161,22,12,Math.PI/2+.95,Math.PI*2-1.9,Math.PI*.24,Math.PI*.36),beard:new THREE.SphereGeometry(.156,22,10,Math.PI/2-1.25,2.5,Math.PI*.6,Math.PI*.3),stache:new THREE.BoxGeometry(.075,.014,.02),tilak:new THREE.SphereGeometry(.012,8,6),smile:new THREE.TorusGeometry(.038,.008,4,12,Math.PI)};
 const SKIN=[0xc68a5e,0xa8714a,0xd9a066,0xb57a52];
 function person(o={}){
   const {top=0x1aa39a,bottom=top,skin=SKIN[0],hair=0x15100c,coat=false,female=false,cap=null,shoes=0x222222,shadow=true}=o;
@@ -939,8 +970,10 @@ function person(o={}){
   const shL=new THREE.Group(),shR=new THREE.Group();shL.position.set(-.27,1.53,0);shR.position.set(.27,1.53,0);g.add(shL,shR);
   const ac=coat?0xf7f8f8:top;add(PG.arm,ac,0,-.27,0,shL);add(PG.arm,ac,0,-.27,0,shR);add(PG.hand,skin,0,-.56,0,shL);const hr=add(PG.hand,skin,0,-.56,0,shR);
   add(PG.neck,skin,0,1.66,0);add(PG.head,skin,0,1.83,0).scale.y=1.1;
-  add(PG.hair,cap||hair,0,1.87,-.012);[-1,1].forEach(e=>{add(PG.eye,0x1a1210,e*.055,1.85,.138);add(PG.brow,hair,e*.056,1.9,.142)});
-  if(o.glasses){const k=0x0b0b0b;[-1,1].forEach(e=>{const cx=e*.062;add(PG.rim,k,cx,1.879,.153);add(PG.rim,k,cx,1.827,.151);add(PG.rimS,k,cx-.044,1.853,.152);add(PG.rimS,k,cx+.044,1.853,.152);add(PG.temple,k,e*.142,1.865,.085)});add(PG.bridge,k,0,1.862,.157)}
+  if(o.receding)add(PG.hairBand,hair,0,1.84,-.005);else add(PG.hair,cap||hair,0,1.87,-.012);
+  if(o.beard){add(PG.beard,hair,0,1.83,.0);add(PG.stache,hair,0,1.795,.145)}
+  if(o.tilak)add(PG.tilak,0xd0141c,0,1.915,.145);[-1,1].forEach(e=>{add(PG.eye,0x1a1210,e*.055,1.85,.138);add(PG.brow,hair,e*.056,1.9,.142)});
+  if(o.glasses){const k=o.thin?0x2c2c2c:0x0b0b0b;[-1,1].forEach(e=>{const cx=e*.062;const r1=add(PG.rim,k,cx,1.879,.153),r2=add(PG.rim,k,cx,1.827,.151);if(o.thin){r1.scale.y=r2.scale.y=.55}add(PG.rimS,k,cx-.044,1.853,.152);add(PG.rimS,k,cx+.044,1.853,.152);add(PG.temple,k,e*.142,1.865,.085)});add(PG.bridge,k,0,1.862,.157)}
   if(o.fringe){const f=add(PG.fringe,hair,.03,1.972,.07);f.rotation.z=.28;f.rotation.x=-.45}
   if(o.smile){const m=add(PG.smile,0x7a2e2a,0,1.792,.133);m.rotation.z=Math.PI}
   if(o.steth){const st=add(PG.steth,0x222a30,0,1.5,.07);st.rotation.x=1.25}if(female&&!cap)add(PG.bun,hair,0,1.86,-.17);
@@ -1050,7 +1083,17 @@ box(.04,.04,3,MAT.chrome,-16.4,3.4,-8.6,I,ns); box(.03,2.8,1.1,curtM,-16.4,1.95,
 box(1.6,.06,.9,MAT.wood,-11,.78,-12.6,I,ns);box(.06,.75,.8,MAT.dark,-11.75,.4,-12.6,I,ns);box(.06,.75,.8,MAT.dark,-10.25,.4,-12.6,I,ns);
 box(.6,.4,.04,MAT.screen,-11,1.05,-12.85,I,ns);
 box(.6,.08,.55,MAT.dark,-11,.46,-11.6,I,ns);box(.6,.7,.08,MAT.dark,-11,.86,-11.3,I,ns);cyl(.04,.04,.42,MAT.chrome,-11,.22,-11.6,I,8,ns);
-const drSignTex=canvasTex(1024,256,(c,w,h)=>{c.fillStyle='#ffffff';c.fillRect(0,0,w,h);c.fillStyle='#0b6e6e';c.fillRect(0,h-16,w,16);drawLogo(c,30,40,1.6);c.textBaseline='middle';c.fillStyle='#16233a';c.font=`800 72px ${FONT}`;c.fillText('Dr. Yoganand Shukla',220,100);c.fillStyle='#0b6e6e';c.font=`600 44px ${FONT}`;c.fillText('Consultation  ·  OPD',222,178)});
+function laptop(x,z,ry){const g=new THREE.Group();g.position.set(x,.815,z);g.rotation.y=ry;I.add(g);
+  box(.42,.022,.3,M(0x3a3f44,{metalness:.6,roughness:.35}),0,0,0,g,false);
+  const sc=new THREE.Group();sc.position.set(0,.01,-.15);sc.rotation.x=-.25;g.add(sc);
+  box(.42,.29,.012,M(0x3a3f44,{metalness:.6,roughness:.35}),0,.145,0,sc,false);
+  mesh(new THREE.PlaneGeometry(.38,.25),new THREE.MeshBasicMaterial({color:0x9fe8ff}),0,.145,.008,sc,false)}
+laptop(-11.25,-12.3,0);
+// Dr. Vrushank Bhatt's desk, next to Dr. Shukla's
+box(1.6,.06,.9,MAT.wood,-9.15,.78,-12.6,I,ns);box(.06,.75,.8,MAT.dark,-9.9,.4,-12.6,I,ns);box(.06,.75,.8,MAT.dark,-8.4,.4,-12.6,I,ns);
+box(.6,.08,.55,MAT.dark,-9.15,.46,-11.6,I,ns);box(.6,.7,.08,MAT.dark,-9.15,.86,-11.3,I,ns);cyl(.04,.04,.42,MAT.chrome,-9.15,.22,-11.6,I,8,ns);
+laptop(-9.15,-12.3,0);
+const drSignTex=canvasTex(1024,256,(c,w,h)=>{c.fillStyle='#ffffff';c.fillRect(0,0,w,h);c.fillStyle='#0b6e6e';c.fillRect(0,h-16,w,16);drawLogo(c,30,40,1.6);c.textBaseline='middle';c.fillStyle='#16233a';c.font=`800 72px ${FONT}`;c.font=`800 56px ${FONT}`;c.fillText('Dr. Yoganand Shukla',220,62);c.fillText('Dr. Vrushank Bhatt',220,130);c.fillStyle='#0b6e6e';c.font=`600 40px ${FONT}`;c.fillText('Consultation  ·  OPD',222,198)});
 {const sg=mesh(new THREE.PlaneGeometry(3.6,.9),new THREE.MeshBasicMaterial({map:drSignTex}),-7.93,3.75,-7.2,I,false);sg.rotation.y=Math.PI/2}
 cyl(.03,.03,1.7,MAT.chrome,-16.3,.85,-9.8,I,8,ns);
 const monTex=canvasTex(256,160,(c,w,h)=>{c.fillStyle='#071a1d';c.fillRect(0,0,w,h);c.strokeStyle='#3fe0d0';c.lineWidth=3;c.beginPath();for(let x=0;x<w;x+=3){const ph=(x%80)/80;const y=ph>.4&&ph<.45?-40:ph>.45&&ph<.5?30:0;x?c.lineTo(x,70+y):c.moveTo(x,70+y)}c.stroke();c.fillStyle='#ff7a6b';c.font='bold 30px Arial';c.fillText('72',14,140);c.fillStyle='#7ff5e8';c.fillText('98%',150,140)});
@@ -1108,7 +1151,13 @@ for(let x=-100;x<=100;x+=25){if(Math.abs(x)<10)continue;cyl(.08,.12,7,MAT.dark,x
 /* ---------- cast ---------- */
 const NURSE={top:0xf7f7f5,bottom:0xf7f7f5,shoes:0xe8e8e8,female:true};   // white uniforms, as in the team photo
 const doctor=person({coat:true,shirt:0xa9cbe8,tie:true,bottom:0x2b3240,skin:0xb98463,hair:0x0c0c0c,glasses:true,fringe:true,smile:true,shoes:0x1f1f1f}); scene.add(doctor);   // Dr. Yoganand Shukla in his white coat
-doctor.rotation.order='YXZ';   // Dr. Yoganand Shukla
+doctor.rotation.order='YXZ';
+const docV=person({coat:true,shirt:0xf3f3f1,bottom:0x2a2f38,skin:0xa87656,hair:0x161210,glasses:true,thin:true,beard:true,shoes:0x1f1f1f}); scene.add(docV);   // Dr. Vrushank Bhatt
+docV.rotation.order='YXZ';   // Dr. Yoganand Shukla
+const DESK={
+  y:{seat:V(-11,-.42,-11.75),path:new THREE.CatmullRomCurve3([V(-11,0,-11.1),V(-12,0,-9.7),V(-13.55,0,-9.0)]),bye:V(-1.48,0,4.76),byeRot:.2},
+  v:{seat:V(-9.15,-.42,-11.75),path:new THREE.CatmullRomCurve3([V(-9.15,0,-11.1),V(-11.3,0,-9.3),V(-13.55,0,-9.0)]),bye:V(-.92,0,4.65),byeRot:.2}};
+let chosen=(location.hash.match(/doc=(\w)/)||[])[1]==='v'?'v':'y',chosenByUser=false;
 const attendant=person({top:0x5b7fa6,bottom:0x3e5470,skin:SKIN[3],hair:0x111111}); scene.add(attendant);   // ward attendant
 const nurseA=person({...NURSE,skin:SKIN[1]}); scene.add(nurseA);
 const nurseB=person({...NURSE,skin:SKIN[3]}); scene.add(nurseB);
@@ -1143,33 +1192,31 @@ const famPath=new THREE.CatmullRomCurve3([V(4.6,0,7.1),V(2.6,0,5),V(.9,0,1.6),V(
 // sidewalk pedestrians
 const peds=[0x8e44ad,0x2e86c1,0xd35400,0x16a085].map((c,i)=>{const p=person({top:c,bottom:0x2c3e50,skin:SKIN[i%4],female:i%2===1,dupatta:c});scene.add(p);p.userData.off=i*22;p.userData.dir=i%2?1:-1;return p});
 
-/* ---------- stethoscope: around the neck, or in the ears while examining ---------- */
-const stethM=M(0x1d2428,{roughness:.35}),chestPiece=new THREE.Group();scene.add(chestPiece);
-cyl(.048,.048,.026,MAT.chrome,0,0,0,chestPiece,18,false);cyl(.02,.02,.04,MAT.chrome,0,.03,0,chestPiece,8,false);
-const earTips=[0,1].map(()=>{const e=mesh(new THREE.SphereGeometry(.018,8,6),MAT.chrome,0,0,0,scene,false);return e});
-const stethTubes=[];
-function tube(i,a,c,b,r=.008){const curve=new THREE.QuadraticBezierCurve3(a,c,b);const g=new THREE.TubeGeometry(curve,14,r,6);
-  if(stethTubes[i]){stethTubes[i].geometry.dispose();stethTubes[i].geometry=g}else{stethTubes[i]=new THREE.Mesh(g,stethM);scene.add(stethTubes[i])}}
-const tmpV=new THREE.Vector3();
-function updateSteth(p){
-  const vis=doctor.visible&&camera.position.distanceTo(doctor.position)<30;
-  chestPiece.visible=vis;earTips.forEach(e=>e.visible=vis&&p>.615&&p<.77);stethTubes.forEach(t=>t.visible=vis);if(!vis)return;
-  const exam=p>.615&&p<.77,dU=doctor.userData;
-  doctor.rotation.x=exam?.14:0;
-  if(exam){dU.shR.rotation.x=-1.25;dU.shR.rotation.z=-.1;dU.shL.rotation.x=-.45}
-  doctor.updateMatrixWorld(true);
-  const L=(x,y,z)=>doctor.localToWorld(V(x,y,z));
-  const yP=L(0,1.34,.2);
-  let cp;
-  if(exam){dU.hand.getWorldPosition(tmpV);cp=tmpV.clone();
-    const eL=L(-.155,1.83,.03),eR=L(.155,1.83,.03);earTips[0].position.copy(eL);earTips[1].position.copy(eR);
-    tube(0,eL,L(-.13,1.55,.2),yP,.007);tube(1,eR,L(.13,1.55,.2),yP,.007);tube(3,eL,eL,eL,.001);
-  }else{cp=L(.07,1.1,.2);
-    const nL=L(-.12,1.6,.1),nR=L(.12,1.6,.1);
-    tube(0,nL,L(-.09,1.45,.2),yP);tube(1,nR,L(.09,1.45,.2),yP);tube(3,nL,L(0,1.72,-.2),nR);}
-  chestPiece.position.copy(cp);
-  const mid=yP.clone().lerp(cp,.5);mid.y-=exam?.12:.06;tube(2,yP,mid,cp);
+/* ---------- stethoscopes: around the neck, or in the ears while examining ---------- */
+const stethM=M(0x1d2428,{roughness:.35}),tmpV=new THREE.Vector3();
+function makeSteth(doc){
+  const chestPiece=new THREE.Group();scene.add(chestPiece);
+  cyl(.048,.048,.026,MAT.chrome,0,0,0,chestPiece,18,false);cyl(.02,.02,.04,MAT.chrome,0,.03,0,chestPiece,8,false);
+  const earTips=[0,1].map(()=>mesh(new THREE.SphereGeometry(.018,8,6),MAT.chrome,0,0,0,scene,false));
+  const tubes=[];
+  function tube(i,a,c,b,r=.008){const g=new THREE.TubeGeometry(new THREE.QuadraticBezierCurve3(a,c,b),14,r,6);
+    if(tubes[i]){tubes[i].geometry.dispose();tubes[i].geometry=g}else{tubes[i]=new THREE.Mesh(g,stethM);scene.add(tubes[i])}}
+  return function(exam){
+    const vis=doc.visible&&camera.position.distanceTo(doc.position)<30;
+    chestPiece.visible=vis;earTips.forEach(e=>e.visible=vis&&exam);tubes.forEach(t=>t.visible=vis);if(!vis)return;
+    const dU=doc.userData;doc.rotation.x=exam?.14:0;
+    if(exam){dU.shR.rotation.x=-1.25;dU.shR.rotation.z=-.1;dU.shL.rotation.x=-.45}
+    doc.updateMatrixWorld(true);
+    const L=(x,y,z)=>doc.localToWorld(V(x,y,z)),yP=L(0,1.34,.2);let cp;
+    if(exam){dU.hand.getWorldPosition(tmpV);cp=tmpV.clone();
+      const eL=L(-.155,1.83,.03),eR=L(.155,1.83,.03);earTips[0].position.copy(eL);earTips[1].position.copy(eR);
+      tube(0,eL,L(-.13,1.55,.2),yP,.007);tube(1,eR,L(.13,1.55,.2),yP,.007);tube(3,eL,eL,eL,.001);
+    }else{cp=L(.07,1.1,.2);const nL=L(-.12,1.6,.1),nR=L(.12,1.6,.1);
+      tube(0,nL,L(-.09,1.45,.2),yP);tube(1,nR,L(.09,1.45,.2),yP);tube(3,nL,L(0,1.72,-.2),nR)}
+    chestPiece.position.copy(cp);const mid=yP.clone().lerp(cp,.5);mid.y-=exam?.12:.06;tube(2,yP,mid,cp);
+  };
 }
+const stethY=makeSteth(doctor),stethV=makeSteth(docV);
 
 /* ---------- post-processing ---------- */
 const composer=new EffectComposer(renderer);
@@ -1221,7 +1268,7 @@ const KF=[
   {p:.772,pos:V(0,3,-1.8),     look:V(8,1.5,-6)},
   {p:.80, pos:V(9.4,2.6,-3.6), look:V(14,1.1,-10.5)},
   {p:.865,pos:V(11.6,2.1,-7),  look:V(14.2,1.2,-11.2)},
-  {p:.915,pos:V(6.5,2.3,11.5), look:V(-.5,1.2,3)},
+  {p:.915,pos:V(6.5,2.3,11.5), look:V(1.4,1.3,3.6)},
   {p:.965,pos:V(9,4.5,22),     look:V(-3,1.5,8)},
   {p:1,   pos:V(50,30,68),     look:V(0,8,-2)}
 ];
@@ -1283,21 +1330,27 @@ function update(p,dt){
     const walking=k>0&&k<1;nurseA.rotation.y=walking?Math.atan2(nA0.x+.5,nA0.z+1.4):Math.atan2(t0.x,t0.z);nurseB.rotation.y=walking?Math.atan2(nB0.x-.7,nB0.z+1.4):Math.atan2(-t0.x,-t0.z);
     animWalk(nurseA,dt,walking);animWalk(nurseB,dt,walking)}
   else if(p<.62){nurseA.position.copy(nA);nurseB.position.copy(nB);const ry=Math.atan2(tan.x,tan.z);nurseA.rotation.y=ry;nurseB.rotation.y=ry;animWalk(nurseA,dt,strMoving);animWalk(nurseB,dt,strMoving)}
-  else{nurseA.position.set(-12.7,0,-10.2);nurseA.rotation.y=-2.3;nurseB.position.set(-9.5,0,-11.5);nurseB.rotation.y=Math.PI;animWalk(nurseA,dt,false);animWalk(nurseB,dt,false)}
+  else{nurseA.position.set(-15.75,0,-10.1);nurseA.rotation.y=.85;nurseB.position.set(-17.3,0,-12.3);nurseB.rotation.y=.7;animWalk(nurseA,dt,false);animWalk(nurseB,dt,false)}
   nurseA.visible=nurseB.visible=p>.268&&p<.875;
-  if(p>=.875){nurseA.visible=true;nurseA.position.set(-2.2,0,3.4);nurseA.rotation.y=.5;}
+  if(p>=.875){nurseA.visible=true;nurseA.position.set(2.4,0,4.3);nurseA.rotation.y=-.6;}
   // ward attendant helps the nurses bring the patient in
   attendant.visible=p>.2&&p<.62;
   if(p<.335){attendant.position.set(2.2,0,3.4);attendant.rotation.y=Math.atan2(.8,5);animWalk(attendant,dt,false)}
   else{attendant.position.copy(sp).addScaledVector(perp,-.95).addScaledVector(tan,.3);attendant.rotation.y=Math.atan2(tan.x,tan.z);animWalk(attendant,dt,strMoving)}
-  // Dr. Yoganand Shukla: at his OPD desk until the patient is wheeled in, then to the bedside
-  doctor.visible=true;const dU=doctor.userData;
-  if(p<.575){doctor.position.set(-11,-.42,-11.75);doctor.rotation.y=Math.PI;animWalk(doctor,dt,false);dU.hipL.rotation.x=dU.hipR.rotation.x=-Math.PI/2;dU.shL.rotation.x=dU.shR.rotation.x=-1.1}
-  else if(p<.875){const k=ease(seg(p,.575,.615)),from=V(-11,0,-11.1);doctor.position.lerpVectors(from,V(-13.55,0,-9.0),k);doctor.rotation.y=k<1?Math.atan2(-2.55,2.1):-Math.PI/2;animWalk(doctor,dt,k>0&&k<1)}
-  else{doctor.position.set(1.3,0,4.6);doctor.rotation.y=-.3;animWalk(doctor,dt,false)}
-  // waving goodbye
-  const waving=p>.93;doctor.userData.shR.rotation.z=waving?2.5+Math.sin(time*7)*.3:0;nurseA.userData.shR.rotation.z=waving?2.5+Math.sin(time*7+1)*.3:0;
-  if(!waving&&p>.62&&p<.875){doctor.userData.shL.rotation.x=-.9;}else doctor.userData.shL.rotation.x*=.9;
+  // Doctors: both start at their desks; the chosen one examines, the other keeps working on his laptop
+  const examiner=chosen==='v'?docV:doctor;
+  [[doctor,'y'],[docV,'v']].forEach(([d,k])=>{const D=DESK[k],S=d===examiner?DESK.y:DESK.v,u=d.userData;d.visible=true;
+    if(p>=.875){d.position.copy(D.bye);d.rotation.y=D.byeRot;animWalk(d,dt,false);return}
+    if(d!==examiner||p<.575){d.position.copy(S.seat);d.rotation.y=Math.PI;animWalk(d,dt,false);u.hipL.rotation.x=u.hipR.rotation.x=-Math.PI/2;
+      u.shL.rotation.x=-1.1+Math.sin(time*11)*.06;u.shR.rotation.x=-1.1+Math.sin(time*11+1.7)*.06;u.shR.rotation.z=0;return}
+    const w=ease(seg(p,.575,.615));onPath(d,S.path,w);d.position.y=0;if(w>=1)d.rotation.y=-Math.PI/2;animWalk(d,dt,w>0&&w<1)});
+  // waving goodbye (both doctors + nurse)
+  const waving=p>.93,wv=i=>2.5+Math.sin(time*7+i)*.3,yU=doctor.userData,vU=docV.userData;
+  nurseA.userData.shR.rotation.z=waving?wv(2):0;
+  if(p>=.875){ // side by side like friends in a photo: Dr. Shukla's arm across Dr. Bhatt's shoulders
+    yU.shR.rotation.z=1.78;yU.shR.rotation.x=.06;yU.shL.rotation.z=waving?-wv(0):-.08;
+    vU.shR.rotation.z=waving?wv(1):.08;vU.shL.rotation.z=-.3;vU.shL.rotation.x=.25;
+  }else{[yU,vU].forEach(u=>{u.shL.rotation.z=0;if(!(p>.615&&p<.77))u.shR.rotation.z=0})}
   // family
   family.visible=(p>.335&&p<.62)||(p>.765);bouquet.visible=p>.765&&p<.875;
   if(p<.62){const fu=ease(seg(p,.335,.53));const t=onPath(family,famPath,fu);animWalk(family,dt,fu>0&&fu<1);if(fu>=1)family.rotation.y=Math.PI}
@@ -1314,13 +1367,13 @@ function update(p,dt){
     }
   holoPanel.visible=false;
   // sliding doors
-  const near=[stretcher,nurseA,nurseB,attendant,doctor,family,patHome].some(o=>o.visible&&Math.hypot(o.position.x,o.position.z)<3.4);
+  const near=[stretcher,nurseA,nurseB,attendant,doctor,docV,family,patHome].some(o=>o.visible&&Math.hypot(o.position.x,o.position.z)<3.4);
   doorOpen+=((near?1:0)-doorOpen)*Math.min(1,dt*5);doorL.position.x=-1-1.95*doorOpen;doorR.position.x=1+1.95*doorOpen;
   // ambient life
   peds.forEach(pd=>{const L=90,x=((time*1.25+pd.userData.off)%L)-L/2;pd.position.set(pd.userData.dir*x,0,pd.userData.dir>0?23.0:23.8);pd.rotation.y=pd.userData.dir>0?Math.PI/2:-Math.PI/2;animWalk(pd,dt,true)});
   traffic.forEach((c,i)=>{const L=260,x=130-((time*10+i*65)%L);c.position.set(x,0,20.25);c.rotation.y=-Math.PI/2});
   fans.forEach(f=>f.rotation.y+=dt*7);
-  updateSteth(p);
+  {const ex=p>.615&&p<.77;stethY(ex&&chosen==='y');stethV(ex&&chosen==='v')}
   const inside=ease(seg(p,.43,.48))*(1-ease(seg(p,.88,.92)));bloom.strength=cur.bloom*(1-.75*inside);
   // camera
   if(!exploring){const t=camAt(p);
@@ -1336,20 +1389,34 @@ function frame(){
   if(!exploring&&!inView()&&!first)return;
   const p=progress();
   update(p,first?.016:dt);
-  if(!exploring){syncOverlay(p);syncDx(p)}
+  curP=p;if(!exploring){syncOverlay(p);syncDx(p);syncChoose(p)}
   composer.render();
   updateTag();
   if(first){first=false;requestAnimationFrame(()=>loader.classList.add('done'))}
 }
-const tagEl=$('#docTag'),tagV=new THREE.Vector3();
+const TAGS=[[$('#docTag'),()=>doctor],[$('#docTag2'),()=>docV]],tagV=new THREE.Vector3();let curP=0;
 function updateTag(){
-  if(!doctor.visible){tagEl.classList.remove('on');return}
-  doctor.updateMatrixWorld();tagV.set(0,2.3,0);doctor.localToWorld(tagV);
-  const dist=tagV.distanceTo(camera.position);camera.updateMatrixWorld();tagV.project(camera);
-  const on=tagV.z<1&&dist<40&&Math.abs(tagV.x)<1.05&&Math.abs(tagV.y)<1.05;
-  tagEl.classList.toggle('on',on);
-  if(on){tagEl.style.transform=`translate(${(tagV.x*.5+.5)*innerWidth}px,${(-tagV.y*.5+.5)*innerHeight}px)`;tagEl.style.setProperty('--s',clamp(12/dist,.65,1.1))}
+  TAGS.forEach(([el,get])=>{const d=get();
+    const ex=chosen==='v'?docV:doctor;if(!d.visible||(curP>.6&&curP<.775&&d!==ex)){el.classList.remove('on');return}
+    d.updateMatrixWorld();const seated=curP<.575||(curP<.875&&d!==(chosen==='v'?docV:doctor));tagV.set(0,(seated||curP>=.875)&&d===docV?2.95:2.3,0);d.localToWorld(tagV);
+    const dist=tagV.distanceTo(camera.position);camera.updateMatrixWorld();tagV.project(camera);
+    const on=tagV.z<1&&dist<40&&Math.abs(tagV.x)<1.05&&Math.abs(tagV.y)<1.05;
+    el.classList.toggle('on',on);
+    if(on){el.style.transform=`translate(${(tagV.x*.5+.5)*innerWidth}px,${(-tagV.y*.5+.5)*innerHeight}px)`;el.style.setProperty('--s',clamp(12/dist,.6,1.1))}});
 }
+// reception: whom would you like to consult?
+const chooseEl=$('#choose'),chNote=$('#chNote');let chOn=false;
+const DOCNAME={y:['Dr. Yoganand Shukla','ડૉ. યોગાનંદ શુક્લ'],v:['Dr. Vrushank Bhatt','ડૉ. વૃષાંક ભટ્ટ']};
+const isGu=()=>document.documentElement.lang==='gu',dn=k=>DOCNAME[k][isGu()?1:0];
+function renderChoice(){
+  $$('.doc-opt').forEach(b=>b.classList.toggle('sel',b.dataset.doc===chosen&&chosenByUser));
+  $$('.doc-opt .dn').forEach(b=>b.textContent=dn(b.dataset.k));
+  chNote.textContent=chosenByUser?(isGu()?`${dn(chosen)} ટૂંક સમયમાં તમને મળશે. આગળ સ્ક્રોલ કરો →`:`${dn(chosen)} will see you shortly. Keep scrolling →`):(isGu()?'ડૉક્ટર પસંદ કરવા ટૅપ કરો':'Tap a doctor to choose');
+  $('#dxDr').textContent=dn(chosen);
+}
+$$('.doc-opt').forEach(b=>b.onclick=()=>{chosen=b.dataset.doc;chosenByUser=true;renderChoice()});
+document.addEventListener('langchange',renderChoice);renderChoice();
+function syncChoose(p){const on=p>.47&&p<.6;if(on!==chOn){chOn=on;chooseEl.classList.toggle('on',on);$('#stage').classList.toggle('ch-on',on)}}
 const dxEl=$('#dx'),dxSteps=$$('.dx-steps li'),dxBar=$('#dxBar'),dxDone=$('#dxDone'),dxHr=$('#dxHr'),dxC=$('#dxEcg').getContext('2d');let dxOn=false;
 function syncDx(p){
   const on=p>.625&&p<.77;if(on!==dxOn){dxOn=on;dxEl.classList.toggle('on',on);$('#stage').classList.toggle('dx-on',on)}if(!on)return;
